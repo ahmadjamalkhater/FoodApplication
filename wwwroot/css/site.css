@@ -29,9 +29,12 @@ body {
 #carouselExampleSlidesOnly {
     height: 400px;
 }
-footer{
-    background-color:#0d243d;
-    height:300px;
+footer {
+    background-color: #0d243d;
+    height: 300px;
+   
+    
+    
 }
 header{
     z-index:1000;
@@ -39,3 +42,42 @@ header{
 .discard{
     height:250px;
 }
+.d-block i.fa-brands fa-instagram {
+    color: blue; /* Replace "blue" with your desired color */
+}
+.fa-instagram {
+    color: #bc2a8d;
+}
+.fa-whatsapp{
+    color:#128c7E;
+}
+.fa-facebook{
+    color:#3b5998;
+}
+.fa-envelope{
+    color:#FBBC05;
+}
+#recipe-list{
+    top:5rem;
+}
+#recipe-list::-webkit-scrollbar{
+    width:10px;
+}
+#recipe-list::-webkit-scrollbar-track{
+    background-color:#ff1448;
+}
+#recipe-list::-webkit-scrollbar-thumb{
+    background-color:#ff1448;
+    border-radius:10px;
+}
+.recipe-item:hover{
+    background-color:#0d243d;
+    border-radius:10px;
+}
+.recipe-item:hover a{
+    color:#ffffff !important;
+}
+
+
+
+
