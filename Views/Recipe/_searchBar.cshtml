@@ -1,9 +1,9 @@
 ﻿<div class="shadow rounded">
     <div class="p-2">
-        <form autocomplete="off">
+        <form autocomplete="off" asp-controller="Recipe" asp-action="Search" method="get">
             <div class="mb-2 row">
                 <div class="col-11 text-center ui-widget p-1">
-                    <input typeof="text" placeholder="Search Recipe" id="tags" class="form-control" name="recipe" />
+                    <input type="text" placeholder="Search Recipe" id="tags" class="form-control" name="recipe" />
                 </div>
                 <div class="col-1 p-1">
                     <button type="submit" class="btn btn-sm btn-success p-2">Search</button>

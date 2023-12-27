@@ -40,7 +40,7 @@ header{
     z-index:1000;
 }
 .discard{
-    height:250px;
+    height:270px;
 }
 .d-block i.fa-brands fa-instagram {
     color: blue; /* Replace "blue" with your desired color */
@@ -78,6 +78,9 @@ header{
     color:#ffffff !important;
 }
 
+#order-img{
+    height:230px;
+}
 
 
 

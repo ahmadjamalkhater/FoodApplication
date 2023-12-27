@@ -1,3 +1,5 @@
+using FoodApplication.Services;
+
 namespace FoodApplication
 {
     public class Program
@@ -8,7 +10,8 @@ namespace FoodApplication
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddTransient<HttpClient>();
+            builder.Services.AddTransient<RecipeService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
