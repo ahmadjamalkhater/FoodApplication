@@ -25,4 +25,8 @@
     <PackageReference Include="Turner.Infrastructure.Crud.EntityFrameworkCore" Version="2.2.0-alpha5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ContextDBConfig\" />
+  </ItemGroup>
+
 </Project>
