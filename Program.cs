@@ -1,4 +1,9 @@
+using FoodApplication.ContextDBConfig;
+using FoodApplication.Models;
 using FoodApplication.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace FoodApplication
 {
@@ -7,12 +12,20 @@ namespace FoodApplication
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var dbconnectoin = builder.Configuration.GetConnectionString("dbConnection");
 
             // Add services to the container.
+
             builder.Services.AddControllersWithViews();
-            builder.Services.AddTransient<HttpClient>();
-            builder.Services.AddTransient<RecipeService>();
-            var app = builder.Build();
+            //  builder.Services.AddDbContext<FoodApplicationDB>(options =>
+            //options.UseSqlServer(dbconnectoin));
+
+            //builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+            //   .AddEntityFrameworkStores<FoodApplicationDB>();
+
+            var app =builder.Build();
+           
+            
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
