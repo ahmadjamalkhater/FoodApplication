@@ -1,4 +1,10 @@
+using FoodApplication.ContextDBConfig;
+using FoodApplication.Models;
 using FoodApplication.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using System.Data.Common;
 
 namespace FoodApplication
 {
@@ -7,13 +13,21 @@ namespace FoodApplication
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            var dbconection = builder.Configuration.GetConnectionString("dbConnection");
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddTransient<HttpClient>();
             builder.Services.AddTransient<RecipeService>();
-            var app = builder.Build();
+            builder.Services.AddDbContext<FoodApplicationDBContext>(Options =>
+           Options.UseSqlServer(dbconection));
 
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<FoodApplicationDBContext>();
+
+
+
+            var app = builder.Build();
+           
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
@@ -24,6 +38,7 @@ namespace FoodApplication
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllerRoute(
                 name: "default",

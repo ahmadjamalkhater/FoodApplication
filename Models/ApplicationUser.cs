@@ -2,7 +2,7 @@
 
 namespace FoodApplication.Models
 {
-    public class ApplicationUser
+    public class ApplicationUser:IdentityUser
     {
         public string? Name { get; set; }
         public string? Address { get; set; }
